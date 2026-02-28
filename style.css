@@ -1,0 +1,188 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff6a00,#ffcc70);
+    color:#333;
+}
+
+/* Header */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:brown;
+}
+
+header nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+    position:relative;
+}
+
+header nav a::after{
+    content:"";
+    width:0%;
+    height:2px;
+    background:white;
+    position:absolute;
+    bottom:-5px;
+    left:0;
+    transition:0.3s;
+}
+
+header nav a:hover::after{
+    width:100%;
+}
+
+/* Hero */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    flex-wrap:wrap;
+    color:white;
+}
+
+.hero-text{
+    flex:1;
+    animation:slideLeft 1s ease;
+}
+
+.hero-text h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:white;
+    color:#ff6a00;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#222;
+    color:white;
+}
+
+.hero-img{
+    flex:1;
+    text-align:center;
+    animation:fadeIn 1.5s ease;
+}
+
+.hero-img img{
+    width:85%;
+    max-width:420px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    transition:0.4s;
+}
+
+.hero-img img:hover{
+    transform:scale(1.05);
+}
+
+/* Sections */
+section{
+    padding:70px 8%;
+    text-align:center;
+    background:white;
+}
+
+.about{
+    border-radius:40px 40px 0 0;
+}
+
+.products .product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    padding:35px;
+    border-radius:20px;
+    font-size:18px;
+    font-weight:600;
+    color:#333;
+    transition:0.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Contact */
+.contact p{
+    margin:10px 0;
+    font-size:17px;
+}
+
+/* Footer */
+footer{
+    background:#111;
+    color:white;
+    padding:20px;
+}
+
+/* Animations */
+@keyframes slideLeft{
+    from{opacity:0; transform:translateX(-50px);}
+    to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:30px;
+    }
+
+    header nav{
+        display:none;
+    }
+}
